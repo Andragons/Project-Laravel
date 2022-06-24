@@ -118,13 +118,14 @@
 
         // Untuk hapus data
         function destroy(id){
+            var noplat = $("#noplat").val();
             $.ajax({
                 type: "get",
                 url: "{{ url('destroy') }}/" + id,
-                data: "no_plat=" + noplat,
+                data: "noplat=" + noplat,
                 success: function(data) {
                     $(".btn-close").click();
-                    tfgy
+                    alert('Data Berhasil Di Hapus');
                     read()
                 }
             });
