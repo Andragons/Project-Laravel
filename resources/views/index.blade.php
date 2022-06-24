@@ -49,7 +49,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -117,46 +117,18 @@
         }
 
         // Untuk hapus data
-        function destroy(id) {
-            var noplat = $("#noplat").val();
+        function destroy(id){
             $.ajax({
                 type: "get",
                 url: "{{ url('destroy') }}/" + id,
-                data: "noplat=" + noplat,
+                data: "no_plat=" + noplat,
                 success: function(data) {
                     $(".btn-close").click();
+                    tfgy
                     read()
                 }
             });
         }
-
-        // proses destroy/hapus data
-// function destroy(id){
-//     Swal.fire({
-//   title: 'Apakah Kamu Yakin ? ',
-//   text: "Menghapus Data ini ",
-//   icon: 'warning',
-//   showCancelButton: true,
-//   confirmButtonColor: '#3085d6',
-//   cancelButtonColor: '#d33',
-//   confirmButtonText: 'Ya'
-// }).then((result) => {
-//   if (result.isConfirmed) {
-//    $.ajax({
-//             type:"get",
-//             url:"{{ url('destroy') }}/"+id,
-//             data: "noplat=" + noplat,
-//             success:function(data){
-//                 read();
-//                 Swal.fire({
-//                     icon: 'success',
-//                     title: 'Data Berhasil',
-//                     text: 'Dihapus'});
-//             }
-//         });
-//   }
-// })
-//     }
         
 
 </script>
